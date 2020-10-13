@@ -1,26 +1,28 @@
+# Selenium browser driver imports
 from selenium.webdriver import Chrome
 from selenium.webdriver import Firefox
 from selenium.webdriver import Edge
 from selenium.webdriver import Opera
-# from selenium import webdriver
 
+# Selenium tool imports
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
+# Other imports
 import time
 
+# Global variables 
 USERNAME = "TestingUser"
 PASSWORD = "Te$+1ng!"
 PRINTER_CLOUD = 'https://marchant.printercloud.com/admin/#'
 WAIT_PERIOD = 2
 SHORT_WAIT = WAIT_PERIOD * 0.25
 LONG_WAIT = WAIT_PERIOD * 2
-# export PATH="$PATH:/mnt/c/WebDriver/bin/geckodriver.exe"
 
 # Waiting is used to give a human user the ability to make a visual check that the script is running correctly 
 
 def openLogin(browser):
-    # This function creates and opens an instance of the Chrome driver to work on.
+    # This function creates and opens an instance of the desired driver to work on.
     if browser == "chrome":
         browserInstance = Chrome('/mnt/c/WebDriver/bin/chromedriver.exe')
         browserInstance.get(PRINTER_CLOUD)
@@ -76,7 +78,6 @@ def simpleLoginWithReturn(browser):
             return False
         except:
             return False
-
 
 def noUsername(browser):
     # This function will try logging in without entering a username
@@ -203,6 +204,7 @@ def privacyPolicy(browser):
             return False
 
 def failThenLogin(browser):
+    # This function will try to login with incorrect credentials, then login using correct credentials
     try:
         browserInstance = openLogin(browser)
         time.sleep(SHORT_WAIT) 
