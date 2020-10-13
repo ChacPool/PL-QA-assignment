@@ -22,3 +22,10 @@ This tests the login screen for the PrinterLogic SaaS PrinterCloud.
 
 These tests will run on Chrome, Firefox, Microsoft Edge, and Opera in that order.
 
+## Going forward
+
+The following are ways I could have continued on.
+
+- Make interactions with the DOM more modular to allow for easier and more customizable scripting.
+- Add previous versions of browser drivers to testing.
+- Run tests on different operating systems

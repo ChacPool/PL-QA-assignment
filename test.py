@@ -11,6 +11,7 @@ import time
 
 USERNAME = "TestingUser"
 PASSWORD = "Te$+1ng!"
+PRINTER_CLOUD = 'https://marchant.printercloud.com/admin/#'
 WAIT_PERIOD = 2
 SHORT_WAIT = WAIT_PERIOD * 0.25
 LONG_WAIT = WAIT_PERIOD * 2
@@ -22,19 +23,19 @@ def openLogin(browser):
     # This function creates and opens an instance of the Chrome driver to work on.
     if browser == "chrome":
         browserInstance = Chrome('/mnt/c/WebDriver/bin/chromedriver.exe')
-        browserInstance.get('https://marchant.printercloud.com/admin/#')
+        browserInstance.get(PRINTER_CLOUD)
         return browserInstance
     elif browser == "firefox":
         browserInstance = Firefox(executable_path='/mnt/c/WebDriver/bin/geckodriver.exe')
-        browserInstance.get('https://marchant.printercloud.com/admin/#')
+        browserInstance.get(PRINTER_CLOUD)
         return browserInstance
     elif browser == "msedge":
         browserInstance = Edge(executable_path='/mnt/c/WebDriver/bin/msedgedriver.exe')
-        browserInstance.get('https://marchant.printercloud.com/admin/#')
+        browserInstance.get(PRINTER_CLOUD)
         return browserInstance
     elif browser == "opera":
         browserInstance = Opera(executable_path='/mnt/c/WebDriver/bin/operadriver.exe')
-        browserInstance.get('https://marchant.printercloud.com/admin/#')
+        browserInstance.get(PRINTER_CLOUD)
         return browserInstance
     else:
         return -1
